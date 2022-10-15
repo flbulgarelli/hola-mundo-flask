@@ -1,13 +1,6 @@
-from flask import Flask, request, render_template, redirect, url_for
-from markupsafe import escape
+from flask import request, render_template
 
-app = Flask(__name__)
-
-
-@app.get("/")
-def raiz():
-    return redirect(url_for("bienvenida"))
-
+from hmf import app
 
 @app.get("/bienvenida")
 def bienvenida():
