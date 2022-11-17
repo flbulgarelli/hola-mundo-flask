@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block titulo %}👋 ¡Saludame!{% endblock %}
+
+{% block cuerpo %}
+  <section class="hmf-saludador">
+    <h1>¡Saludame!</h1>
+    <form action="/bienvenida" method="GET">
+      <fieldset>
+        <input type="text" name="nombre" placeholder="Soy...">
+        <input type="submit" value="👋" class="hmf-principal">
+      </fieldset>
+    </form>
+  </section>
+  <section class="hmf-recientes">
+    <a href="{{ url_for('recientes') }}" class="hmf-enlace-interno">Saludos recientes</a>
+  </section>
+{% endblock %}

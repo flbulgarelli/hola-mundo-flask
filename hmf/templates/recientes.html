@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block titulo %}⏲ Saludos Recientes{% endblock %}
+
+{% block cuerpo %}
+{% for item in recientes %}
+  <article>
+    <i>⏲</i>
+    <span>{{item['nombre']}}</span>
+    <time datetime="{{ item['fecha'] }}">{{item['fecha']}}</time>
+  </article>
+{% endfor %}
+{% endblock %}

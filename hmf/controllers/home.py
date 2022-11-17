@@ -1,7 +1,7 @@
-from flask import redirect, url_for
+from flask import redirect, render_template
 
 from hmf import app
 
 @app.get("/")
-def raiz():
-    return redirect(url_for("bienvenida"))
+def home():
+    return render_template("home.html")
