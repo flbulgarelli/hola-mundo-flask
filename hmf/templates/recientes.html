@@ -2,12 +2,16 @@
 
 {% block titulo %}⏲ Saludos Recientes{% endblock %}
 
+
 {% block cuerpo %}
-{% for item in recientes %}
-  <article>
-    <i>⏲</i>
-    <span>{{item['nombre']}}</span>
-    <time datetime="{{ item['fecha'] }}">{{item['fecha']}}</time>
+<h1>Saludos recientes</h1>
+<section class="hmf-saludos">
+  {% for item in recientes %}
+  <article class="hmf-saludo">
+    <span class="hmf-nombre">👋 {{item['nombre']}}</span>
+    <span class="hmf-ip">🌎 {{item['ip']}}</span>
+    <time class="hmf-fecha" datetime="{{ item['fecha'] }}">⏲ {{formatear_fecha(item['fecha'])}}</time>
   </article>
-{% endfor %}
+  {% endfor %}
+</section>
 {% endblock %}

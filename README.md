@@ -9,13 +9,22 @@
 ## Instalación
 
 ```bash
+# 1. Preparación de entorno. Estos dos primeros comandos son opcionales
 $ python -m venv .venv
 $ source .venv/bin/activate
+
+# 2. Instalación del proyecto y todas sus dependencias
 $ pip install -e .
 ```
 
 ## Inicio del servidor
 
 ```bash
+# Inicio del entorno. Este paso es opcional.
+# Si previamente NO preparaste un entorno, ignorarlo.
+# De igual forma, si YA ejecutaste este comando en esta terminal, ignorarlo
+$ source .venv/bin/activate
+
+# Inicio del servidor
 $ flask --debug --app hmf run --port 9000
 ```

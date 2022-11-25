@@ -106,3 +106,28 @@ h1 {
   font-size: 3rem;
   margin: 15px 0 10px;
 }
+
+.hmf-saludo {
+  margin: 10px;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: var(--color-complementario-oscuro);
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 30ch;
+  background-color: var(--color-complementario);
+}
+
+.hmf-saludos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hmf-nombre, .hmf-ip, .hmf-fecha {
+  margin: 5px;
+}

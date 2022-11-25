@@ -1,16 +1,13 @@
 from flask import request, render_template
+from hmf import app, saludos
 from datetime import datetime
-from hmf import app
-
-saludos_recientes = []
+import timeago
 
 @app.get("/bienvenida")
 def bienvenida():
     quien = nombre()
-    saludos_recientes.append({'nombre': quien, 'fecha': datetime.now()})
-
+    saludos.registrar_saludo(quien, request.remote_addr)
     return render_template("bienvenida.html", nombre=quien)
-
 
 @app.get("/despedida")
 def despedida():
@@ -18,7 +15,11 @@ def despedida():
 
 @app.get("/recientes")
 def recientes():
-    return render_template("recientes.html", recientes=saludos_recientes)
+    return render_template("recientes.html", recientes=saludos.recientes, formatear_fecha=formatear_fecha)
 
 def nombre():
     return request.args.get("nombre", "Mundo")
+
+
+def formatear_fecha(fecha):
+    return timeago.format(fecha, datetime.now(), 'es')
